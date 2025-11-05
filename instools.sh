@@ -38,11 +38,16 @@ manual_notes() {
 
 2) enum4linux:
    git clone https://github.com/CiscoCXSecurity/enum4linux.git
-   cd enum4linux
-   # run with: ./enum4linux.pl <target>
 
 3) SecLists:
    git clone --depth 1 https://github.com/danielmiessler/SecLists.git
+
+4) sqlmap:
+   git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap
+
+5) wpscan:
+   sudo gem install nokogiri
+   sudo gem install wpscan
 
 MAN
 }
@@ -110,6 +115,7 @@ done
 
 # apt-installable tools
 apt_tools=(
+    "hydra"
     "ffuf"
     "nmap"
     "gobuster"
@@ -127,6 +133,8 @@ done
 dependencies=(
     "chromium"
     "libpcap-dev"
+    "ruby-dev"
+    "gem"
 )
 
 echo
@@ -147,6 +155,7 @@ go_tools=(
     "github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest"
     "github.com/tomnomnom/waybackurls@latest"
     "github.com/lc/gau/v2/cmd/gau@latest"
+    "github.com/s0md3v/smap/cmd/smap@latest"
 )
 
 echo
