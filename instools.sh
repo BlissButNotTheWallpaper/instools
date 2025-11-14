@@ -34,20 +34,23 @@ manual_notes() {
     cat <<'MAN'
 
 1) impacket:
-   python3 -m pipx install impacket
+python3 -m pipx install impacket
 
 2) enum4linux:
-   git clone https://github.com/CiscoCXSecurity/enum4linux.git
+git clone https://github.com/CiscoCXSecurity/enum4linux.git
 
 3) SecLists:
-   git clone --depth 1 https://github.com/danielmiessler/SecLists.git
+git clone --depth 1 https://github.com/danielmiessler/SecLists.git
 
 4) sqlmap:
-   git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap
 
 5) wpscan:
-   sudo gem install nokogiri
-   sudo gem install wpscan
+sudo gem install nokogiri
+sudo gem install wpscan
+
+6) EyeWitness:
+git clone https://github.com/RedSiege/EyeWitness.git
 
 MAN
 }
@@ -97,7 +100,6 @@ pipx ensurepath || true
 
 # Python tools (pipx)
 python_tools=(
-    "git+https://github.com/xnl-h4ck3r/waymore.git"
     "bbot"
     "git+https://github.com/Pennyw0rth/NetExec"
 )
@@ -120,6 +122,7 @@ apt_tools=(
     "nmap"
     "gobuster"
     "cewl"
+    "hashcat"
 )
 
 echo
@@ -148,10 +151,8 @@ done
 go_tools=(
     "github.com/tomnomnom/anew@latest"
     "github.com/tomnomnom/unfurl@latest"
-    "github.com/projectdiscovery/asnmap/cmd/asnmap@latest"
     "github.com/sensepost/gowitness@latest"
     "github.com/projectdiscovery/httpx/cmd/httpx@latest"
-    "github.com/projectdiscovery/naabu/v2/cmd/naabu@latest"
     "github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest"
     "github.com/tomnomnom/waybackurls@latest"
     "github.com/lc/gau/v2/cmd/gau@latest"
