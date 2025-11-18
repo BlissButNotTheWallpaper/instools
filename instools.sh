@@ -151,12 +151,9 @@ done
 go_tools=(
     "github.com/tomnomnom/anew@latest"
     "github.com/tomnomnom/unfurl@latest"
-    "github.com/sensepost/gowitness@latest"
     "github.com/projectdiscovery/httpx/cmd/httpx@latest"
     "github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest"
-    "github.com/tomnomnom/waybackurls@latest"
     "github.com/lc/gau/v2/cmd/gau@latest"
-    "github.com/s0md3v/smap/cmd/smap@latest"
 )
 
 echo
@@ -187,9 +184,8 @@ echo
 cat <<'FIN'
 Manual follow-up (copy & paste if needed):
 
-python3 -m pipx install impacket
-git clone https://github.com/CiscoCXSecurity/enum4linux.git
-git clone --depth 1 https://github.com/danielmiessler/SecLists.git
+$ ./instools.sh -m
+
 FIN
 
 echo
