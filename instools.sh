@@ -33,9 +33,6 @@ EOF
 manual_notes() {
     cat <<'MAN'
 
-1) impacket:
-python3 -m pipx install impacket
-
 2) enum4linux:
 git clone https://github.com/CiscoCXSecurity/enum4linux.git
 
@@ -51,6 +48,12 @@ sudo gem install wpscan
 
 6) EyeWitness:
 git clone https://github.com/RedSiege/EyeWitness.git
+
+7) fuzz.txt:
+git clone https://github.com/Bo0oM/fuzz.txt.git
+
+8) fuzzDB:
+git clone https://github.com/fuzzdb-project/fuzzdb.git --depth 1 
 
 MAN
 }
@@ -96,32 +99,29 @@ sudo apt install -y python3-pip pipx git || {
 }
 
 # ensure pipx path is available
-pipx ensurepath || true
+#pipx ensurepath || true
 
 # Python tools (pipx)
-python_tools=(
-    "bbot"
-    "git+https://github.com/Pennyw0rth/NetExec"
-)
-
-echo
-echo "Installing Python (pipx) tools..."
-for python_tool in "${python_tools[@]}"; do
-    echo "-> $python_tool"
-    if pipx list 2>/dev/null | grep -q "$(basename "$python_tool" | sed 's/\.git$//')" ; then
-        echo "   already installed; skipping"
-        continue
-    fi
-    pipx install "$python_tool" || echo "   pipx install failed for $python_tool"
-done
-
+#python_tools=(
+#    "bbot"
+#    "git+https://github.com/Pennyw0rth/NetExec"
+#)
+#
+#echo
+#echo "Installing Python (pipx) tools..."
+#for python_tool in "${python_tools[@]}"; do
+#    echo "-> $python_tool"
+#    if pipx list 2>/dev/null | grep -q "$(basename "$python_tool" | sed 's/\.git$//')" ; then
+#        echo "   already installed; skipping"
+#        continue
+#    fi
+#    pipx install "$python_tool" || echo "   pipx install failed for $python_tool"
+#done
+#
 # apt-installable tools
+
 apt_tools=(
-    "hydra"
-    "ffuf"
     "nmap"
-    "gobuster"
-    "cewl"
     "hashcat"
 )
 
@@ -149,7 +149,6 @@ done
 
 # Go tools
 go_tools=(
-    "github.com/tomnomnom/anew@latest"
     "github.com/tomnomnom/unfurl@latest"
     "github.com/projectdiscovery/httpx/cmd/httpx@latest"
     "github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest"
