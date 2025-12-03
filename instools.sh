@@ -55,6 +55,14 @@ git clone https://github.com/Bo0oM/fuzz.txt.git
 8) fuzzDB:
 git clone https://github.com/fuzzdb-project/fuzzdb.git --depth 1 
 
+9) NetExec:
+sudo apt install pipx git
+pipx ensurepath
+pipx install git+https://github.com/Pennyw0rth/NetExec
+
+10) feroxbuster:
+curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/main/install-nix.sh | bash -s $HOME/.local/bin
+
 MAN
 }
 
@@ -98,31 +106,8 @@ sudo apt install -y python3-pip pipx git || {
     exit 1
 }
 
-# ensure pipx path is available
-#pipx ensurepath || true
-
-# Python tools (pipx)
-#python_tools=(
-#    "bbot"
-#    "git+https://github.com/Pennyw0rth/NetExec"
-#)
-#
-#echo
-#echo "Installing Python (pipx) tools..."
-#for python_tool in "${python_tools[@]}"; do
-#    echo "-> $python_tool"
-#    if pipx list 2>/dev/null | grep -q "$(basename "$python_tool" | sed 's/\.git$//')" ; then
-#        echo "   already installed; skipping"
-#        continue
-#    fi
-#    pipx install "$python_tool" || echo "   pipx install failed for $python_tool"
-#done
-#
-# apt-installable tools
-
 apt_tools=(
     "nmap"
-    "hashcat"
 )
 
 echo
@@ -149,6 +134,7 @@ done
 
 # Go tools
 go_tools=(
+    "github.com/ffuf/ffuf/v2@latest"
     "github.com/tomnomnom/unfurl@latest"
     "github.com/projectdiscovery/httpx/cmd/httpx@latest"
     "github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest"
