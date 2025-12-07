@@ -160,6 +160,7 @@ echo
 echo "Installing Go tools..."
 if ! command -v go >/dev/null 2>&1; then
     echo "ERROR: Go not found in PATH. Install Go and re-run the script." >&2
+    echo "Install Go at https://go.dev/doc/install"
     exit 1
 fi
 
