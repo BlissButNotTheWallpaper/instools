@@ -63,6 +63,20 @@ pipx install git+https://github.com/Pennyw0rth/NetExec
 10) feroxbuster:
 curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/main/install-nix.sh | bash -s $HOME/.local/bin
 
+11) metasploit:
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+  chmod 755 msfinstall && \
+  ./msfinstall
+
+12) dirb wordlist:
+https://gitlab.com/kalilinux/packages/dirb.git
+
+13) responder:
+pipx install git+https://github.com/lgandx/Responder.git
+
+14) evil-winrm:
+sudo gem install evil-winrm
+
 MAN
 }
 
@@ -123,6 +137,7 @@ dependencies=(
     "libpcap-dev"
     "ruby-dev"
     "gem"
+    "bluez"
 )
 
 echo
